@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     #search the make
-    uri = URI("http://www.webmotors.com.br/carro/marcas")
+    uri = URI('http://www.webmotors.com.br/carro/marcas')
 
     # Make request for Webmotors site
     response = Net::HTTP.post_form(uri, {})
@@ -10,8 +10,8 @@ class HomeController < ApplicationController
 
     # Itera no resultado e grava as marcas que ainda não estão persistidas
     json.each do |make_params|
-      if Make.where(name: make_params["Nome"]).size == 0
-        Make.create(name: make_params["Nome"], webmotors_id: make_params["Id"])
+      if Make.where(name: make_params['Nome']).size == 0
+        Make.create(name: make_params['Nome'], webmotors_id: make_params['Id'])
       end
     end
   end
