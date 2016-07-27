@@ -18,7 +18,7 @@ module Service
     end
 
     def models_from(maker_id)
-      response = self.class.post(METHODS[:models], { marca: maker_id })
+      response = self.class.post(METHODS[:models], query: { marca: maker_id })
       return [] unless response.success?
       JSON.parse(response.body)
     end
