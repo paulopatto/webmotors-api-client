@@ -13,13 +13,13 @@ module Service
 
     def makers(options = {})
       response = self.class.post(METHODS[:makers], options)
-      return nil unless response.success?
+      return [] unless response.success?
       JSON.parse(response.body)
     end
 
     def models_from(maker_id)
       response = self.class.post(METHODS[:models], { marca: maker_id })
-      return nil unless response.success?
+      return [] unless response.success?
       JSON.parse(response.body)
     end
   end

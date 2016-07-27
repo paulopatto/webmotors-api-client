@@ -19,9 +19,13 @@ describe Service::Webmotors do
       expect(subject.first).to be_include('Id')
     end
 
-    it 'return nil if does not response with success' do
+    it 'does not return empty array' do
+      expect(subject).to_not be_empty
+    end
+
+    it 'return empty Array if does not response with success' do
       allow(described_class).to receive(:post).and_return(double(:response, success?: false))
-      expect(subject).to be_nil
+      expect(subject).to be_empty
     end
   end
 end
