@@ -2,8 +2,6 @@ class HomeController < ApplicationController
   include Concerns::Webmotors
 
   def index
-    update_makers
-
-    @makers = Make.all
+    @makers = (Make.count > 0) ? Make.all : update_makers
   end
 end
