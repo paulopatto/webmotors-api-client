@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -27,6 +27,7 @@ gem 'httparty'
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
+  gem 'annotate'
 end
 
 group :development do
@@ -36,4 +37,6 @@ group :test do
   gem 'rspec-rails'
   gem 'vcr'
   gem 'webmock'
+  gem 'capybara'
+  gem 'poltergeist'
 end
