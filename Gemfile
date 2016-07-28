@@ -30,9 +30,6 @@ group :development, :test do
   gem 'annotate'
 end
 
-group :development do
-end
-
 group :test do
   gem 'rspec-rails'
   gem 'vcr'
