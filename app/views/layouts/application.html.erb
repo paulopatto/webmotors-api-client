@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AdtsysApplicantTest</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>AdtsysApplicantTest</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id='stage' class='container'>
+      <div class='header clearfix'>
+        <nav>
+          <ul class='nav nav-pills pull-right'>
+            <li><a href='http://github.com/paulopatto'>Github</a></li>
+          </ul>
+        </nav>
+        <h3 class='text-muted'>Acessando a API do webmotors</h3>
+      </div>
+      <hr />
+      <%= yield %>
+    </div>
+  </body>
 </html>

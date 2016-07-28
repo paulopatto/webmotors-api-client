@@ -1,6 +1,9 @@
-<a href="/"><< Voltar</a>
-<ul>
+<a href="/" class='btn btn-primary'>
+  <span class='glyphicon glyphicon-arrow-left'></span>
+</a>
+
+<ul class='list-group col-md-6'>
   <% @models.each do |model| %>
-    <li><%= model.name %></li>
+    <li class='list-group-item'><%= model.name %></li>
   <% end %>
 </ul>
