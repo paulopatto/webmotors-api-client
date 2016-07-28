@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative File.expand_path('../../../app/services/webmotors', __FILE__)
 
-describe Service::Webmotors do
+describe Services::Webmotors do
   subject { described_class.new }
 
   describe '#makers', vcr: { cassette_name: 'post_webmotors_carro_marcas' } do

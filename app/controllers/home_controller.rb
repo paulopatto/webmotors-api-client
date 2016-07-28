@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     update_makers
   end
@@ -6,15 +7,12 @@ class HomeController < ApplicationController
   private
 
   def update_makers
-    #search the make
-    uri = URI('http://www.webmotors.com.br/carro/marcas')
+    wm_service = Services::Webmotors.new
+    makers = wm_service.makers
 
-    # Make request for Webmotors site
-    response = Net::HTTP.post_form(uri, {})
-    json = JSON.parse response.body
 
     # Itera no resultado e grava as marcas que ainda não estão persistidas
-    json.each do |make_params|
+    makers.each do |make_params|
       if Make.where(name: make_params['Nome']).size == 0
         Make.create(name: make_params['Nome'], webmotors_id: make_params['Id'])
       end

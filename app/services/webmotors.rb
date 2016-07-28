@@ -1,6 +1,6 @@
 require 'httparty'
 
-module Service
+module Services
   class Webmotors
     include HTTParty
 
